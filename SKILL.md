@@ -1,9 +1,9 @@
 ---
-name: bigquery
+name: bigquery-skill
 description: Analyze data in Google BigQuery using Application Default Credentials (ADC) and answer business questions in clear, business-friendly language. Use when Codex needs to explore BigQuery projects, datasets, tables, or schemas; map business terms such as sales, depletions, customers, brands, channels, or campaigns to warehouse tables; write efficient SQL; combine related tables with joins; export result sets to CSV; or explain BigQuery-backed findings to technical or non-technical users.
 ---
 
-# BigQuery
+# BigQuery Skill
 
 Use this skill to discover BigQuery data safely, understand schema before querying, and translate query results into concise business answers. Prefer the bundled helper script because the `bq` CLI is not installed in this environment.
 

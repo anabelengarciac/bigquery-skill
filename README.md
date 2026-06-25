@@ -1,4 +1,4 @@
-# BigQuery Analyst Skill
+# BigQuery Skill
 
 ![Status](https://img.shields.io/badge/status-showcase_ready-2ea44f)
 ![Domain](https://img.shields.io/badge/domain-analytics_engineering-0969da)

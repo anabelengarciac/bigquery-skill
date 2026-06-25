@@ -1,4 +1,4 @@
 interface:
-  display_name: "BigQuery"
+  display_name: "BigQuery Skill"
   short_description: "Explore BigQuery and answer business questions"
-  default_prompt: "Use $bigquery to explore the relevant BigQuery data, write efficient SQL, and answer my business question clearly."
+  default_prompt: "Use $bigquery-skill to explore the relevant BigQuery data, write efficient SQL, and answer my business question clearly."
