@@ -1,14 +1,16 @@
-# BigQuery Analyst Skill
+# BigQuery Analytics Assistant
 
-![Status](https://img.shields.io/badge/status-showcase_ready-2ea44f)
+> Turns an ambiguous business question into a validated BigQuery exploration path, with SQL checks, source traceability, and a business-readable answer.
+
+![Status](https://img.shields.io/badge/status-product_workflow-2ea44f)
 ![Domain](https://img.shields.io/badge/domain-analytics_engineering-0969da)
 ![Stack](https://img.shields.io/badge/stack-python_%7C_bigquery_%7C_adc-6f42c1)
 
 An AI-assisted BigQuery workflow that turns vague business questions into reproducible, cost-aware SQL exploration. It is designed for analytics environments where the hardest part is rarely writing SQL, but deciding which tables, grains, filters, and metric definitions are safe to trust.
 
-## Why It Matters
+## Product Impact
 
-This skill demonstrates how I structure data work when accuracy, cost control, and business readability all matter. It guides an agent through schema discovery, dry runs, efficient querying, CSV exports, and executive-style answers without hallucinating tables or columns.
+This workflow demonstrates how I structure data work when accuracy, cost control, and business readability all matter. It guides an analyst or AI assistant through schema discovery, dry runs, efficient querying, CSV exports, and executive-style answers without guessing tables or columns.
 
 | Business value | Technical value |
 | --- | --- |
@@ -26,7 +28,7 @@ This skill demonstrates how I structure data work when accuracy, cost control, a
 - Translate business terms such as sales, customers, brands, campaigns, and channels into schema hypotheses before querying.
 - Return concise business-facing answers with traceable source tables.
 
-## Workflow
+## Functional Flow
 
 ```mermaid
 flowchart LR
@@ -38,12 +40,12 @@ flowchart LR
     F --> G["Business answer with caveats"]
 ```
 
-## Repository Structure
+## Code And Installation
 
 ```text
 .
-|-- SKILL.md                  # Codex skill instructions
-|-- agents/openai.yaml        # Agent metadata
+|-- SKILL.md                  # Operating rules for the assistant workflow
+|-- agents/openai.yaml        # Interface metadata
 `-- scripts/bigquery_tool.py  # BigQuery discovery/query CLI
 ```
 
@@ -69,6 +71,6 @@ python3 scripts/bigquery_tool.py query --project my-project --sql-file /tmp/quer
 
 `BigQuery`  -  `Python CLI design`  -  `analytics engineering`  -  `data discovery`  -  `SQL quality control`  -  `business translation`  -  `AI workflow design`
 
-## Security
+## Public Scope
 
-This is a sanitized showcase repository. It contains no credentials, service-account files, warehouse names, or private datasets. Authentication is expected through local Application Default Credentials.
+This public version contains no credentials, service-account files, warehouse names, or private datasets. Authentication is expected through local Application Default Credentials.

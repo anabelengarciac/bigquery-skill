@@ -265,6 +265,8 @@ def command_query(args: argparse.Namespace) -> None:
         job_config.maximum_bytes_billed = args.maximum_bytes_billed
 
     if args.dry_run:
+        # Business rule: estimate query cost before execution so ad hoc analysis stays auditable
+        # and does not surprise the data owner with unnecessary warehouse spend.
         job_config.dry_run = True
         job_config.use_query_cache = False
         query_job = client.query(sql, job_config=job_config, location=args.location)
@@ -286,6 +288,8 @@ def command_query(args: argparse.Namespace) -> None:
     result = query_job.result(max_results=args.max_rows)
     schema = query_job.schema or result.schema or []
     columns = [field.name for field in schema]
+    # Business rule: keep exports row-limited by default. The assistant should prove the
+    # answer path before asking for larger extracts that may contain sensitive business data.
     rows = [{column: serialize_value(row[column]) for column in columns} for row in result]
     total_rows = result.total_rows
 
